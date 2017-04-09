@@ -1,0 +1,9 @@
+{% macro assets() %}
+    {% javascripts
+        '@PromoBundle/Resources/assets/components/slides/slides.js'
+        '@PromoBundle/Resources/assets/components/toolbar/toolbar.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <link rel="stylesheet" href="{{ asset('bundles/promo/css/components.css') }}" />
+{% endmacro %}

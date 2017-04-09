@@ -1,0 +1,38 @@
+@import "mixin.less";
+
+.keyframes(
+  fadeIn;
+  {
+    0% {
+      opacity: 0;
+      -ms-filter: alpha(opacity=0);
+      filter: alpha(opacity=0);
+    }
+    100% {
+      opacity: 1;
+      -ms-filter: alpha(opacity=100);
+      filter: alpha(opacity=100);
+    }
+  }
+);
+
+.transition {
+  transition: 0.9s;
+  &.transition--right {
+    &.animated {
+      margin-left: 80px;
+    }
+  }
+  &.transition--top {
+    margin-top: 80px;
+    &.animated {
+      margin-top: 0px;
+    }
+  }
+}
+
+.animation {
+  &--fadeIn {
+    .animation(fadeIn 0.6s forwards);
+  }
+}

@@ -1,0 +1,31 @@
+services:
+
+  promo.tracking.engine.doctrine_orm:
+    class: Sokil\PromoBundle\Tracking\Engine\DoctrineOrmTrackingEngine
+    arguments:
+      - "@doctrine.orm.entity_manager"
+    tags:
+      - {name: "promo.tracking.engine", alias: "doctrine_orm"}
+
+  promo.tracking.engine.blackhole:
+    class: Sokil\PromoBundle\Tracking\Engine\BlackholeTrackingEngine
+    tags:
+      - {name: "promo.tracking.engine", alias: "blackhole"}
+
+  promo.param_converter.campaign:
+    class: Sokil\PromoBundle\ParamConverter\CampaignParamConverter
+    tags:
+      - {name: request.param_converter, converter: promo_campaign_converter}
+
+  promo.page.resolver:
+    class: Sokil\PromoBundle\Page\Resolver
+    arguments:
+      - []
+    calls:
+      - ["setContainer", ["@service_container"]]
+
+  promo.page.renderer:
+    class: Sokil\PromoBundle\Page\Renderer
+    arguments:
+      - "@promo.page.resolver"
+      - "@templating"
