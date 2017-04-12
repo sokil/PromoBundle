@@ -20,12 +20,9 @@ Toolbar.prototype = {
         this.initialToolbarTop = this.$toolbar.offset().top;
 
         // listen scroll events
-        $(window).scroll(_.debounce(
-            function() {
-                this.changeState();
-            }.bind(this),
-            50
-        ));
+        $(window).scroll(function() {
+            this.changeState();
+        }.bind(this));
 
         // initial change of animated state
         this.changeState();
