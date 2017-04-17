@@ -9,10 +9,10 @@ module.exports = function (grunt) {
     less: {
       components: {
         files: {
-          "Resources/public/css/components.css": [
-            "Resources/assets/components/animation/styles.less",
-            "Resources/assets/components/slides/styles.less",
-            "Resources/assets/components/toolbar/styles.less"
+          "src/Resources/public/css/components.css": [
+            "src/Resources/assets/components/animation/styles.less",
+            "src/Resources/assets/components/slides/styles.less",
+            "src/Resources/assets/components/toolbar/styles.less"
           ]
         }
       }
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
         ]
       },
       all: {
-        src: 'Resources/public/css/*.css'
+        src: 'src/Resources/public/css/*.css'
       }
     }
   });
