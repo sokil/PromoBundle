@@ -40,7 +40,7 @@ landing_index:
 
 # track exit and redirect to external url
 landing_away:
-  path: /
+  path: /away
   defaults:
     _controller: PromoBundle:Landing:away
   methods:  [GET]
