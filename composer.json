@@ -2,6 +2,7 @@
   "name": "sokil/promo-bundle",
   "description": "Promo",
   "license": "MIT",
+  "type": "symfony-bundle",
   "authors": [
     {
       "name": "Dmytro Sokil",
