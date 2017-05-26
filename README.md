@@ -6,8 +6,44 @@ Promo Bundle
 
 ## Installation
 
+Add composer dependency:
+
 ```
 composer.phar require sokil/promo-bundle
+```
+
+Add bundle to your `AppKernel`:
+
+```php
+<?php
+
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            new Sokil\PromoBundle\PromoBundle(),
+        );
+    }
+}
+```
+
+Configure routes in `app/config/routing.yml`:
+
+```yaml
+# show landing page
+landing_index:
+  path: /
+  defaults:
+    _controller: PromoBundle:Landing:index
+  methods:  [GET]
+
+# track exit and redirect to external url
+landing_away:
+  path: /
+  defaults:
+    _controller: PromoBundle:Landing:away
+  methods:  [GET]
 ```
 
 ## Away action
